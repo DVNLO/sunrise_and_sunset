@@ -61,10 +61,10 @@ double julian_date(int_fast16_t const year,
                    int_fast8_t const hour, 
                    int_fast8_t const minute, 
                    int_fast8_t const second)
-/* Returns the Julian Date given a Julian Day Number (JDN) and time of
- * day. Otherwise, returns infinity. Assumes months January through December
- * are enumerated from 1 to 12, respectively. Days are valid between 1 and 
- * 31, inclusive. Hours are from a 24-hour clock. 
+/* Returns the Julian Date given year, month, day, and time of day. Otherwise, 
+ * returns infinity. Assumes months January through December are enumerated 
+ * from 1 to 12, respectively. Days are valid between 1 and 31, inclusive. 
+ * Hours are from a 24-hour clock. 
  * https://en.wikipedia.org/wiki/Julian_day
  */
 {
