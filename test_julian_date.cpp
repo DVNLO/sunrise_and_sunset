@@ -24,10 +24,8 @@ bool test_aavso_example(int_fast16_t const year,
                       hour, 
                       minute, 
                       second) };
-    double abs_err{ absolute_error(actual_jd, 
-                                   expected_jd) };
-    printf("absolute_error(%f, %f) == %f\n", actual_jd, expected_jd, abs_err);
-    return abs_err < ABSOLUTE_ERROR_THRESHOLD;
+    return absolute_error(actual_jd, 
+                          expected_jd) < ABSOLUTE_ERROR_THRESHOLD;
 }
 
 bool test_aavso_example_1()

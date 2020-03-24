@@ -2,7 +2,9 @@
 #include <limits>
 
 inline bool is_leap_year(int_fast32_t const year)
-// https://stackoverflow.com/a/11595914
+/* Returns true if year is a leap year. 
+ * https://stackoverflow.com/a/11595914
+ */
 {
     return ((year & 3) == 0 
             && ((year % 25) != 0 
@@ -11,6 +13,8 @@ inline bool is_leap_year(int_fast32_t const year)
 
 int_fast8_t days_in_month(int_fast16_t const year,
                           int_fast8_t const month)
+/* Returns the number of days in a month.
+ */
 {
     static int_fast8_t constexpr JANUARY{ 1 };
     static int_fast8_t constexpr FEBRUARY{ 2 };
@@ -52,6 +56,9 @@ int_fast8_t days_in_month(int_fast16_t const year,
 inline bool is_valid_gregorian_date(int_fast16_t const year, 
                                     int_fast8_t const month, 
                                     int_fast8_t const day)
+/* Returns true if year, month, and day are a valid Gregorian 
+ * calendar date. Otherwise, returns false.
+ */
 {
     return month >= 0  && month <= 12 
             && day >= 0 && day <= days_in_month(year, month);
@@ -60,6 +67,9 @@ inline bool is_valid_gregorian_date(int_fast16_t const year,
 inline bool is_valid_24_hour_time(int_fast8_t const hour, 
                                   int_fast8_t const minute, 
                                   int_fast8_t const second)
+/* Returns true if hour, minute, and second are a valid 24-hour
+ * clock time.
+ */
 {
     return hour >= 0 && hour <= 24
             && minute >= 0 && minute <= 60
