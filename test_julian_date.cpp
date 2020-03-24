@@ -91,15 +91,17 @@ bool test_aavso_example_3()
                               expected_jd);
 }
 
-bool test_recipes_example_today()
+bool test_origin()
+// Returns true if actual and expected Julian Day Numbers (jdn) are equal.
+// Tests the origin of the Julian Day
 {
-    int_fast16_t year{ 2020 };
-    int_fast8_t month{ 3 };
-    int_fast8_t day{ 23 };
+    int_fast16_t year{ -4713 };
+    int_fast8_t month{ 11 };
+    int_fast8_t day{ 24 };
     int_fast8_t hour{ 12 };
     int_fast8_t minute{ 0 };
     int_fast8_t second{ 0 };
-    double expected_jd{ 2'458'932.5 };
+    double expected_jd{ 0.0 };
     return test_aavso_example(year,
                               month,
                               day,
@@ -114,5 +116,5 @@ int main()
     assert(test_aavso_example_1());
     assert(test_aavso_example_2());
     assert(test_aavso_example_3());
-    assert(test_recipes_example_today());
+    assert(test_origin());
 }
