@@ -1,6 +1,8 @@
 #include "julian_date.h"
 #include <limits>
 
+constexpr double JULIAN_DATE_J2000{ 2'451'545.0 };
+
 inline bool is_leap_year(int_fast32_t const year)
 /* Returns true if year is a leap year. 
  * https://stackoverflow.com/a/11595914
@@ -89,12 +91,12 @@ inline bool can_map_to_julian_date(int_fast16_t const year,
             || year == -4713 && (month >= 11 || (month == 11 && day > 23));
 }
 
-double julian_date(int_fast16_t const year,
-                   int_fast8_t const month,
-                   int_fast8_t const day,
-                   int_fast8_t const hour,
-                   int_fast8_t const minute,
-                   int_fast8_t const second)
+double get_julian_date(int_fast16_t const year,
+                       int_fast8_t const month,
+                       int_fast8_t const day,
+                       int_fast8_t const hour,
+                       int_fast8_t const minute,
+                       int_fast8_t const second)
 /* Returns the Julian Date given year, month, day, and time of day for all
  * Gregorian calendar dates after November 23, −4713. Otherwise, returns 
  * infinity. Assumes months January through December are enumerated 

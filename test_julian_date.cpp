@@ -18,12 +18,12 @@ bool test_aavso_example(int_fast16_t const year,
                         int_fast8_t const second,
                         double const expected_jd)
 {
-    double actual_jd{ julian_date(year, 
-                      month, 
-                      day, 
-                      hour, 
-                      minute, 
-                      second) };
+    double actual_jd{ get_julian_date(year, 
+                                      month, 
+                                      day, 
+                                      hour, 
+                                      minute, 
+                                      second) };
     return absolute_error(actual_jd, 
                           expected_jd) < ABSOLUTE_ERROR_THRESHOLD;
 }
